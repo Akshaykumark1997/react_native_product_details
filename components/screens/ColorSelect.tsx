@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     borderWidth: SPACING.SCALE_1,
-    borderColor: "#E0E0E0",
+    borderColor: COLORS.gray.primary,
     borderRadius: SPACING.SCALE_10,
     padding: SPACING.SCALE_12,
   },
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
 
   borderBottom: {
     height: SPACING.SCALE_1,
-    backgroundColor: "#E0E0E0",
+    backgroundColor: COLORS.gray.primary,
     flexDirection: "row",
   },
 });

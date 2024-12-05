@@ -5,6 +5,7 @@ import { MainImageContext } from "@/context/MainImageContex";
 import ColorSelect from "@/components/screens/ColorSelect";
 import ProductDescription from "@/components/screens/ProductDescription";
 import SizeChart from "@/components/screens/SizeChart";
+import FrequentlyBought from "@/components/screens/FrequentlyBought";
 
   const imagesArr = {
     main: "https://www.ikea.com/in/en/images/products/ekeroe-armchair-skiftebo-yellow__0204753_pe359787_s5.jpg?f=xl",
@@ -19,8 +20,8 @@ const Home:React.FC =()=> {
     <MainImageContext.Provider value={{ images, setImages }}>
       <ScrollView
         contentContainerStyle={styles.scrollContainer}
-        showsVerticalScrollIndicator={false} // Hides the vertical scroll indicator
-        bounces={true} // Enables a smooth bounce effect
+        showsVerticalScrollIndicator={false}
+        bounces={true}
         overScrollMode="always"
       >
         <View style={styles.container}>
@@ -28,6 +29,7 @@ const Home:React.FC =()=> {
           <ColorSelect />
           <ProductDescription />
           <SizeChart />
+          <FrequentlyBought/>
         </View>
       </ScrollView>
     </MainImageContext.Provider>

@@ -44,7 +44,7 @@ const ProductImages: React.FC = () => {
       </View>
       <View style={styles.productDetailsMainContainer}>
         <View style={styles.detailsContainer}>
-          <TextPrimary style={styles.productname}>EKERO</TextPrimary>
+          <TextPrimary style={styles.productname}>EKERÖ</TextPrimary>
           <View style={styles.pricing}>
             <TextPrimary style={styles.offerPricing}>$230.00</TextPrimary>
             <TextPrimary style={styles.discount}>$512.28</TextPrimary>
@@ -101,10 +101,10 @@ const styles = StyleSheet.create({
     borderRadius: SPACING.SCALE_8,
     borderColor: COLORS.green.secondary,
   },
-  productDetailsMainContainer:{
+  productDetailsMainContainer: {
     backgroundColor: COLORS.white.secondary,
-    borderTopEndRadius:SPACING.SCALE_24,
-    borderTopLeftRadius: SPACING.SCALE_24
+    borderTopEndRadius: SPACING.SCALE_24,
+    borderTopLeftRadius: SPACING.SCALE_24,
   },
   detailsContainer: {
     padding: SPACING.SCALE_16,
@@ -164,7 +164,7 @@ const styles = StyleSheet.create({
   },
   borderBottom: {
     height: SPACING.SCALE_1,
-    backgroundColor: "#E0E0E0",
+    backgroundColor: COLORS.gray.primary,
   },
   starIcon: {
     marginRight: SPACING.SCALE_4,

@@ -44,5 +44,8 @@ export const COLORS = {
   },
   golden:{
     primary:"#EBB65B"
+  },
+  gray:{
+    primary: "#E0E0E0"
   }
 };

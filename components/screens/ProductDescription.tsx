@@ -52,16 +52,16 @@ const styles = StyleSheet.create({
     fontFamily: "manrope-regular",
     fontWeight: "700",
     fontSize: TYPOGRAPHY.FONT_20,
-    color:COLORS.black.primary
+    color: COLORS.black.primary,
   },
   description: {
     fontFamily: "manrope-regular",
     fontWeight: "400",
     fontSize: TYPOGRAPHY.FONT_16,
-    color:COLORS.black.primary
+    color: COLORS.black.primary,
   },
   borderBottom: {
     height: 1,
-    backgroundColor: "#E0E0E0",
+    backgroundColor: COLORS.gray.primary,
   },
 });

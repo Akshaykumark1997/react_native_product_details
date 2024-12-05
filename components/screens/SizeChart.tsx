@@ -70,7 +70,7 @@ export default SizeChart;
 const styles = StyleSheet.create({
   container: {
     padding: SPACING.SCALE_16,
-    backgroundColor: COLORS.white.secondary
+    backgroundColor: COLORS.white.secondary,
   },
   headerContainer: {
     flexDirection: "row",
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     fontSize: TYPOGRAPHY.FONT_20,
     paddingBottom: SPACING.SCALE_14,
-    color: COLORS.black.primary
+    color: COLORS.black.primary,
   },
   label: {
     fontWeight: "400",
@@ -93,13 +93,13 @@ const styles = StyleSheet.create({
     height: scaleSize(263),
     marginTop: SPACING.SCALE_20,
   },
-  downArrow:{
-    marginBottom: SPACING.SCALE_10
+  downArrow: {
+    marginBottom: SPACING.SCALE_10,
   },
   borderBottom: {
     height: 1,
-    backgroundColor: "#E0E0E0",
-    marginTop:SPACING.SCALE_10,
-    marginBottom: SPACING.SCALE_10
+    backgroundColor: COLORS.gray.primary,
+    marginTop: SPACING.SCALE_10,
+    marginBottom: SPACING.SCALE_10,
   },
 });
