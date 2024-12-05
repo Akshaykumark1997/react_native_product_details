@@ -32,7 +32,11 @@ const SizeChart: React.FC = () => {
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
-        <Text style={styles.heading}>Size</Text>
+        <TouchableOpacity onPress={toggleSize}>
+          <Text style={styles.heading} onPress={toggleSize}>
+            Size
+          </Text>
+        </TouchableOpacity>
         <TouchableOpacity onPress={toggleSize}>
           <AntDesign
             name={!isToggleDescription ? "down" : "up"}

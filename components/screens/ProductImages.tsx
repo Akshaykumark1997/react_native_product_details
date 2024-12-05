@@ -1,11 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import {
-  View,
-  StyleSheet,
-  SafeAreaView,
-  ImageSourcePropType,
-  TouchableOpacity,
-} from "react-native";
+import { View, StyleSheet, SafeAreaView, TouchableOpacity } from "react-native";
 import ImagePrimary from "@/components/display/image/ImagePrimary";
 import { scaleSize } from "@/styles/diamensions";
 import SPACING from "@/styles/spacing";
@@ -15,26 +9,53 @@ import TYPOGRAPHY from "@/styles/fontSizes";
 import { FontAwesome } from "@expo/vector-icons";
 import { MainImageContext } from "@/context/MainImageContex";
 import BestSellerBadge from "./BestSellerBadge";
-
+import { PanGestureHandler, State } from "react-native-gesture-handler";
 
 const ProductImages: React.FC = () => {
-   const { images } = useContext(MainImageContext);
+  const { images } = useContext(MainImageContext);
   const [mainImage, setMainImage] = useState<string>(images.main);
   const subImages = [images.main, images.sub1, images.sub2];
+
   const handleSubImagePress = (image: string) => {
     setMainImage(image);
   };
-  useEffect(()=> {
-    setMainImage(images.main)
-  },[images])
+
+  useEffect(() => {
+    setMainImage(images.main);
+  }, [images]);
+
+  const handleSwipe = ({ nativeEvent }:any) => {
+    if (nativeEvent.state === State.END) {
+      if (nativeEvent.translationX < -50) {
+        changeImage(1);
+      } else if (nativeEvent.translationX > 50) {
+        changeImage(-1);
+      }
+    }
+  };
+
+  const changeImage = (direction: number) => {
+    const currentIndex = subImages.indexOf(mainImage);
+    const nextIndex =
+      (currentIndex + direction + subImages.length) % subImages.length;
+    setMainImage(subImages[nextIndex]);
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.subcontainer}>
         <View style={styles.bestSellerContainer}>
           <BestSellerBadge />
         </View>
-        <ImagePrimary style={styles.image} source={{ uri: mainImage }} />
+
+        {/* PanGestureHandler for swipe */}
+        <PanGestureHandler onHandlerStateChange={handleSwipe}>
+          <View>
+            <ImagePrimary style={styles.image} source={{ uri: mainImage }} />
+          </View>
+        </PanGestureHandler>
       </View>
+
       <View style={styles.subImagesContainer}>
         {subImages.map((subImage, index) => (
           <TouchableOpacity
@@ -46,6 +67,7 @@ const ProductImages: React.FC = () => {
           </TouchableOpacity>
         ))}
       </View>
+
       <View style={styles.productDetailsMainContainer}>
         <View style={styles.detailsContainer}>
           <TextPrimary style={styles.productname}>EKERÖ</TextPrimary>

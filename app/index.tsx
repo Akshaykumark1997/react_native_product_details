@@ -7,7 +7,7 @@ import ProductDescription from "@/components/screens/ProductDescription";
 import SizeChart from "@/components/screens/SizeChart";
 import FrequentlyBought from "@/components/screens/FrequentlyBought";
 import AddToCart from "@/components/screens/AddToCart";
-
+import { GestureHandlerRootView } from "react-native-gesture-handler";
   const imagesArr = {
     main: "https://www.ikea.com/in/en/images/products/ekeroe-armchair-skiftebo-yellow__0204753_pe359787_s5.jpg?f=xl",
     sub1: "https://www.ikea.com/in/en/images/products/ekeroe-armchair-skiftebo-yellow__1116442_pe872500_s5.jpg?f=xl",
@@ -18,23 +18,25 @@ const Home:React.FC =()=> {
   const [images, setImages] = useState(imagesArr);
 
   return (
-    <MainImageContext.Provider value={{ images, setImages }}>
-      <ScrollView
-        contentContainerStyle={styles.scrollContainer}
-        showsVerticalScrollIndicator={false}
-        bounces={true}
-        overScrollMode="always"
-      >
-        <View style={styles.container}>
-          <ProductImages />
-          <ColorSelect />
-          <ProductDescription />
-          <SizeChart />
-          <FrequentlyBought/>
-          <AddToCart />
-        </View>
-      </ScrollView>
-    </MainImageContext.Provider>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <MainImageContext.Provider value={{ images, setImages }}>
+        <ScrollView
+          contentContainerStyle={styles.scrollContainer}
+          showsVerticalScrollIndicator={false}
+          bounces={true}
+          overScrollMode="always"
+        >
+          <View style={styles.container}>
+            <ProductImages />
+            <ColorSelect />
+            <ProductDescription />
+            <SizeChart />
+            <FrequentlyBought />
+            <AddToCart />
+          </View>
+        </ScrollView>
+      </MainImageContext.Provider>
+    </GestureHandlerRootView>
   );
 }
 export default Home;

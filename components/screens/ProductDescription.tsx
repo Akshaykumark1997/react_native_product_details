@@ -16,9 +16,15 @@ const ProductDescription:React.FC = () => {
       <>
         <View style={styles.container}>
           <View style={styles.headingContainer}>
-            <Text style={styles.heading}>Product Description</Text>
             <TouchableOpacity onPress={toggleDescription}>
-              <AntDesign name={!isToggleDescription ? "down" : "up"} size={24} color={COLORS.black.primary} />
+              <Text style={styles.heading}>Product Description</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={toggleDescription}>
+              <AntDesign
+                name={!isToggleDescription ? "down" : "up"}
+                size={24}
+                color={COLORS.black.primary}
+              />
             </TouchableOpacity>
           </View>
           {isToggleDescription && (
