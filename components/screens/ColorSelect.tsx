@@ -63,8 +63,8 @@ export default ColorSelect;
 
 const styles = StyleSheet.create({
   container: {
-    padding: 16,
-    gap: 10,
+    padding: SPACING.SCALE_14,
+    gap: SPACING.SCALE_10,
     backgroundColor: COLORS.white.secondary,
   },
   heading: {
@@ -75,33 +75,33 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "space-between",
-    gap: 20,
+    gap: SPACING.SCALE_20,
   },
 
   buttonContainer: {
     width: scaleSize(163),
     flexDirection: "row",
     alignItems: "center",
-    borderWidth: 1,
+    borderWidth: SPACING.SCALE_1,
     borderColor: "#E0E0E0",
-    borderRadius: 8,
-    padding: 12,
+    borderRadius: SPACING.SCALE_10,
+    padding: SPACING.SCALE_12,
   },
   name: {
     color: COLORS.black.primary,
     fontWeight: "400",
-    fontSize: 14,
+    fontSize: TYPOGRAPHY.FONT_14,
   },
 
   colorDisplay: {
-    width: 35,
-    height: 35,
-    borderRadius: 5,
-    marginRight: 8,
+    width: SPACING.SCALE_30,
+    height: SPACING.SCALE_30,
+    borderRadius: SPACING.SCALE_2,
+    marginRight: SPACING.SCALE_8,
   },
 
   borderBottom: {
-    height: 1,
+    height: SPACING.SCALE_1,
     backgroundColor: "#E0E0E0",
     flexDirection: "row",
   },
