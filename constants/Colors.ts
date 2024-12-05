@@ -41,5 +41,8 @@ export const COLORS = {
   green:{
     primary: "#1C3A13",
     secondary:"#146651"
+  },
+  golden:{
+    primary:"#EBB65B"
   }
 };

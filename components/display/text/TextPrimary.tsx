@@ -38,7 +38,7 @@ interface TextPrimaryProps {
 export const TextPrimary: React.FC<TextPrimaryProps> = ({
   style,
   font = "r",
-  color = COLORS.green.secondary,
+  color = COLORS.black.primary,
   children,
   ...otherParams
 }) => {

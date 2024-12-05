@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
   View,
   StyleSheet,
@@ -13,20 +13,19 @@ import { COLORS } from "@/constants/Colors";
 import { TextPrimary } from "../display/text/TextPrimary";
 import TYPOGRAPHY from "@/styles/fontSizes";
 import { FontAwesome } from "@expo/vector-icons";
+import { MainImageContext } from "@/context/MainImageContex";
 
-
-const images = {
-  main: "https://www.ikea.com/in/en/images/products/ekeroe-armchair-skiftebo-yellow__0204753_pe359787_s5.jpg?f=xl",
-  sub1: "https://www.ikea.com/in/en/images/products/ekeroe-armchair-skiftebo-yellow__1116442_pe872500_s5.jpg?f=xl",
-  sub2: "https://www.ikea.com/in/en/images/products/ekeroe-armchair-skiftebo-yellow__0836444_pe596409_s5.jpg?f=xl",
-};
 
 const ProductImages: React.FC = () => {
+   const { images } = useContext(MainImageContext);
   const [mainImage, setMainImage] = useState<string>(images.main);
   const subImages = [images.main, images.sub1, images.sub2];
   const handleSubImagePress = (image: string) => {
     setMainImage(image);
   };
+  useEffect(()=> {
+    setMainImage(images.main)
+  },[images])
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.subcontainer}>
@@ -52,7 +51,7 @@ const ProductImages: React.FC = () => {
             <TextPrimary style={styles.offer}>45%OFF</TextPrimary>
           </View>
           <View style={styles.ratingContainer}>
-            <FontAwesome name="star" size={20} color="#EBB65B" />
+            <FontAwesome name="star" size={20} color={COLORS.golden.primary} />
             <TextPrimary style={styles.ratingContainer}>4.9 (300)</TextPrimary>
           </View>
           <View>
@@ -103,13 +102,12 @@ const styles = StyleSheet.create({
     borderColor: COLORS.green.secondary,
   },
   productDetailsMainContainer:{
-    // margin:SPACING.SCALE_12
     backgroundColor: COLORS.white.secondary,
-    borderRadius:SPACING.SCALE_24
+    borderTopEndRadius:SPACING.SCALE_24,
+    borderTopLeftRadius: SPACING.SCALE_24
   },
   detailsContainer: {
     padding: SPACING.SCALE_16,
-    position: "relative",
   },
   productname: {
     fontFamily: "manrope-regular",

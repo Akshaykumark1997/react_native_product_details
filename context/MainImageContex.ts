@@ -11,6 +11,6 @@ interface ImageContextType {
   setImages: React.Dispatch<React.SetStateAction<Images>>;
 }
 
-export const MainImageContext = createContext<ImageContextType | undefined>(undefined);
+export const MainImageContext = createContext<any>(null);
 
 
