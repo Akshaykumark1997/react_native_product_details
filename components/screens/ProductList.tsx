@@ -40,11 +40,12 @@ const styles = StyleSheet.create({
   scrollContainer: {
     paddingVertical: SPACING.SCALE_10,
     marginLeft: SPACING.SCALE_16,
+    marginBottom:4
   },
   container: {
     width: scaleSize(146),
-    marginRight: SPACING.SCALE_16,
-    backgroundColor: "#FFFFFF",
+    marginRight: SPACING.SCALE_12,
+    backgroundColor: COLORS.white.secondary,
     padding: SPACING.SCALE_16,
     borderRadius: SPACING.SCALE_14,
     shadowColor: "F8F8F8",

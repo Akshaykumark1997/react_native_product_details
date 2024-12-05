@@ -6,6 +6,7 @@ import ColorSelect from "@/components/screens/ColorSelect";
 import ProductDescription from "@/components/screens/ProductDescription";
 import SizeChart from "@/components/screens/SizeChart";
 import FrequentlyBought from "@/components/screens/FrequentlyBought";
+import AddToCart from "@/components/screens/AddToCart";
 
   const imagesArr = {
     main: "https://www.ikea.com/in/en/images/products/ekeroe-armchair-skiftebo-yellow__0204753_pe359787_s5.jpg?f=xl",
@@ -30,6 +31,7 @@ const Home:React.FC =()=> {
           <ProductDescription />
           <SizeChart />
           <FrequentlyBought/>
+          <AddToCart />
         </View>
       </ScrollView>
     </MainImageContext.Provider>

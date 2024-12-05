@@ -32,6 +32,7 @@ const styles = StyleSheet.create({
   container: {
     padding: SPACING.SCALE_10,
     backgroundColor: COLORS.white.secondary,
+    marginBottom:-10
   },
   heading: {
     fontFamily: "manrope-regular",
