@@ -33,7 +33,9 @@ export const COLORS = {
   },
   red:{
     primary: "#E44A4A",
-    secondary: "#E35D33"
+    secondary: "#E35D33",
+    dark:"#B24040",
+    light:"#E14a49"
   },
   yellow:{
     primary: "#E3AD33"

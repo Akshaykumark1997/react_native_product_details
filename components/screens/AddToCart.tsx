@@ -29,7 +29,7 @@ const AddToCart: React.FC = () => {
 
     setTimeout(() => {
       setIsLoading(false);
-      Alert.alert("Confirmation", "Item added to cart successfully!", [
+      Alert.alert("Success", "Item added to cart successfully!", [
         { text: "OK" },
       ]);
     }, 2000);
@@ -57,7 +57,7 @@ const AddToCart: React.FC = () => {
         disabled={isLoading}
       >
         {isLoading ? (
-          <ActivityIndicator size="small" color="#ffffff" />
+          <ActivityIndicator size="small" color={COLORS.white.secondary} />
         ) : (
           <Text style={styles.cartButtonText}>Add to Cart</Text>
         )}

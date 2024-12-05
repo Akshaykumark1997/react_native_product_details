@@ -14,6 +14,7 @@ import { TextPrimary } from "../display/text/TextPrimary";
 import TYPOGRAPHY from "@/styles/fontSizes";
 import { FontAwesome } from "@expo/vector-icons";
 import { MainImageContext } from "@/context/MainImageContex";
+import BestSellerBadge from "./BestSellerBadge";
 
 
 const ProductImages: React.FC = () => {
@@ -29,6 +30,9 @@ const ProductImages: React.FC = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.subcontainer}>
+        <View style={styles.bestSellerContainer}>
+          <BestSellerBadge />
+        </View>
         <ImagePrimary style={styles.image} source={{ uri: mainImage }} />
       </View>
       <View style={styles.subImagesContainer}>
@@ -71,17 +75,24 @@ export default ProductImages;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: COLORS.white.primary,
+    backgroundColor: COLORS.white.secondary,
+    position:'relative'
+  },
+  bestSellerContainer:{
+    position:"absolute",
+    top:10,
+    left:0,
+    zIndex:999
   },
   subcontainer: {
     flexDirection: "row",
     justifyContent: "center",
     marginTop: SPACING.SCALE_20,
-    backgroundColor: COLORS.white.primary,
+    backgroundColor: COLORS.white.secondary,
   },
   image: {
-    width: scaleSize(200),
-    height: scaleSize(200),
+    width: scaleSize(220),
+    height: scaleSize(220),
   },
   subImagesContainer: {
     flexDirection: "row",
