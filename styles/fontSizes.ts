@@ -1,6 +1,6 @@
 import { scaleFont } from "./diamensions";
 
-const typography = {
+const TYPOGRAPHY = {
   // FONT SIZE
   FONT_XS: scaleFont(10),
   FONT_S: scaleFont(12),
@@ -30,4 +30,4 @@ const typography = {
   },
 };
 
-export default typography;
+export default TYPOGRAPHY;

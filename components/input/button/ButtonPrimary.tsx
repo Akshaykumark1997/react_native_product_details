@@ -1,7 +1,7 @@
 import { View, Pressable, StyleSheet } from "react-native";
 import React from "react";
-import typography from "../../../styles/fontSizes";
-import { Colors } from "../../../constants/Colors";
+import TYPOGRAPHY from "../../../styles/fontSizes";
+import { COLORS } from "../../../constants/Colors";
 import { TextPrimary } from "../../../components/display/text/TextPrimary";
 
 
@@ -29,20 +29,20 @@ const styles = StyleSheet.create({
     width: "50%",
   },
   button: {
-    paddingVertical: typography.FONT_12,
-    paddingHorizontal: typography.FONT_14,
+    paddingVertical: TYPOGRAPHY.FONT_12,
+    paddingHorizontal: TYPOGRAPHY.FONT_14,
     borderRadius: 10,
     alignItems: "center",
     backgroundColor: "#146651",
   },
   text: {
-    color: Colors.white.secondary,
-    fontWeight:"500"
+    color: COLORS.white.secondary,
+    fontWeight: "500",
     // color: "#FFF"
   },
   outlinedButton: {
     borderWidth: 1,
-    paddingVertical: typography.FONT_11,
-    borderColor: Colors.green.primary,
+    paddingVertical: TYPOGRAPHY.FONT_11,
+    borderColor: COLORS.green.primary,
   },
 });

@@ -1,29 +1,29 @@
 import { Text, StyleSheet, TextStyle } from "react-native";
 import React, { ReactNode } from "react";
-import typography from "../../../styles/fontSizes";
-import { Colors } from "../../../constants/Colors";
+import TYPOGRAPHY from "../../../styles/fontSizes";
+import { COLORS } from "../../../constants/Colors";
 
 const textStyles: Record<string, TextStyle> = {
   xl: {
-    fontSize: typography.FONT_XL,
+    fontSize: TYPOGRAPHY.FONT_XL,
   },
   lg: {
-    fontSize: typography.FONT_L,
+    fontSize: TYPOGRAPHY.FONT_L,
   },
   m: {
-    fontSize: typography.FONT_M,
+    fontSize: TYPOGRAPHY.FONT_M,
   },
   b: {
-    fontSize: typography.FONT_16,
+    fontSize: TYPOGRAPHY.FONT_16,
   },
   r: {
-    fontSize: typography.FONT_R,
+    fontSize: TYPOGRAPHY.FONT_R,
   },
   sm: {
-    fontSize: typography.FONT_S,
+    fontSize: TYPOGRAPHY.FONT_S,
   },
   xs: {
-    fontSize: typography.FONT_XS,
+    fontSize: TYPOGRAPHY.FONT_XS,
   },
 };
 
@@ -38,16 +38,13 @@ interface TextPrimaryProps {
 export const TextPrimary: React.FC<TextPrimaryProps> = ({
   style,
   font = "r",
-  color = Colors.green.secondary,
+  color = COLORS.green.secondary,
   children,
   ...otherParams
 }) => {
   return (
     <Text
-      style={[
-        { fontSize: textStyles[font].fontSize, color: color },
-        style,
-      ]}
+      style={[{ fontSize: textStyles[font].fontSize, color: color }, style]}
       {...otherParams}
     >
       {children}
@@ -57,6 +54,6 @@ export const TextPrimary: React.FC<TextPrimaryProps> = ({
 
 const styles = StyleSheet.create({
   main: {
-    fontFamily: typography.FONT.bold,
+    fontFamily: TYPOGRAPHY.FONT.bold,
   },
 });

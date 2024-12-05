@@ -1,31 +1,24 @@
-import React from "react";
-import { View, Text, StyleSheet } from "react-native";
-import { useRouter } from "expo-router";
-import PrimaryButton from "@/components/input/button/ButtonPrimary";
+import React, { useState } from "react";
+import { View } from "react-native";
+import ProductImages from "@/components/screens/ProductImages";
+import { MainImageContext } from "@/context/MainImageContex";
 
-export default function Home() {
-  const router = useRouter();
+  const imagesArr = {
+    main: "https://www.ikea.com/in/en/images/products/ekeroe-armchair-skiftebo-yellow__0204753_pe359787_s5.jpg?f=xl",
+    sub1: "https://www.ikea.com/in/en/images/products/ekeroe-armchair-skiftebo-yellow__1116442_pe872500_s5.jpg?f=xl",
+    sub2: "https://www.ikea.com/in/en/images/products/ekeroe-armchair-skiftebo-yellow__0836444_pe596409_s5.jpg?f=xl"
+  };
+
+const Home:React.FC =()=> {
+  const [images, setImages] = useState(imagesArr);
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Welcome to the Home Page</Text>
-      <PrimaryButton
-        title="Add to cart"
-        onPress={() => console.log("clickedd")}
-      />
-    </View>
+      <MainImageContext.Provider value={{ images, setImages }}>
+        <View>
+          <ProductImages />
+        </View>
+      </MainImageContext.Provider>
+
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: "bold",
-    marginBottom: 10,
-  }
-});
+export default Home;
