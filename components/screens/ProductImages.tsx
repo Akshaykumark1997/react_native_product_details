@@ -76,13 +76,13 @@ export default ProductImages;
 const styles = StyleSheet.create({
   container: {
     backgroundColor: COLORS.white.secondary,
-    position:'relative'
+    position: "relative",
   },
-  bestSellerContainer:{
-    position:"absolute",
-    top:10,
-    left:0,
-    zIndex:999
+  bestSellerContainer: {
+    position: "absolute",
+    top: 10,
+    left: 0,
+    zIndex: 999,
   },
   subcontainer: {
     flexDirection: "row",
@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
     paddingVertical: SPACING.SCALE_20,
     gap: scaleSize(10),
     justifyContent: "center",
-    backgroundColor: COLORS.white.primary,
+    backgroundColor: COLORS.white.secondary,
   },
   subimg: {
     width: scaleSize(50),
@@ -116,6 +116,10 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.white.secondary,
     borderTopEndRadius: SPACING.SCALE_24,
     borderTopLeftRadius: SPACING.SCALE_24,
+    shadowColor: "F8F8F8",
+    shadowOpacity: SPACING.SCALE_1,
+    shadowRadius: SPACING.SCALE_12,
+    elevation: SPACING.SCALE_5,
   },
   detailsContainer: {
     padding: SPACING.SCALE_16,
