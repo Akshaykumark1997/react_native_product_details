@@ -6,11 +6,12 @@ import SPACING from "@/styles/spacing";
 import { scaleSize } from "@/styles/diamensions";
 import TYPOGRAPHY from "@/styles/fontSizes";
 import productsList, { Product } from "@/utils/products";
+import ImagePrimary from "../display/image/ImagePrimary";
 
 const ProductList: React.FC = () => {
   const renderItem = ({ item }: { item: Product }) => (
     <View key={item.id} style={styles.container}>
-      <Image style={styles.image} source={{ uri: item.image }} />
+      <ImagePrimary style={styles.image} source={ item.image} />
       <Text style={styles.offer}>{item.offer}</Text>
       <Text style={styles.productname}>{item.name}</Text>
       <Text style={styles.price}>{item.price}</Text>

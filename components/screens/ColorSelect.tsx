@@ -6,6 +6,7 @@ import TYPOGRAPHY from "@/styles/fontSizes";
 import { scaleSize } from "@/styles/diamensions";
 import { useContext } from "react";
 import { MainImageContext } from "@/context/MainImageContex";
+import { Asset } from "expo-asset";
 
 const colors = [
   { color: COLORS.golden.primary, name: "Harvest Gold" },
@@ -19,15 +20,27 @@ const ColorSelect: React.FC = () => {
      const handleColorChange = (color: any) => {
        if (color === "Eerie Black") {
          setImages({
-           main: "https://www.ikea.com/in/en/images/products/ekeroe-armchair-skiftebo-dark-grey__0983033_pe815899_s5.jpg?f=xl",
-           sub1: "https://www.ikea.com/in/en/images/products/ekeroe-armchair-skiftebo-dark-grey__0951659_pe801307_s5.jpg?f=xl",
-           sub2: "https://www.ikea.com/in/en/images/products/ekeroe-armchair-skiftebo-dark-grey__0951660_pe801308_s5.jpg?f=xl",
+           main: Asset.fromModule(
+             require("../../assets/images/chair_black_main.png")
+           ),
+           sub1: Asset.fromModule(
+             require("../../assets/images/chair_black_sub1.png")
+           ),
+           sub2: Asset.fromModule(
+             require("../../assets/images/chair_black_sub2.png")
+           ),
          });
        } else {
          setImages({
-           main: "https://www.ikea.com/in/en/images/products/ekeroe-armchair-skiftebo-yellow__0204753_pe359787_s5.jpg?f=xl",
-           sub1: "https://www.ikea.com/in/en/images/products/ekeroe-armchair-skiftebo-yellow__1116442_pe872500_s5.jpg?f=xl",
-           sub2: "https://www.ikea.com/in/en/images/products/ekeroe-armchair-skiftebo-yellow__0836444_pe596409_s5.jpg?f=xl",
+           main: Asset.fromModule(
+             require("../../assets/images/chair_yellow_main.png")
+           ),
+           sub1: Asset.fromModule(
+             require("../../assets/images/chair_yellow_sub1.png")
+           ),
+           sub2: Asset.fromModule(
+             require("../../assets/images/chair_yellow_sub2.png")
+           ),
          });
        }
      };

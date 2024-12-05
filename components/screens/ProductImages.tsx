@@ -10,10 +10,11 @@ import { FontAwesome } from "@expo/vector-icons";
 import { MainImageContext } from "@/context/MainImageContex";
 import BestSellerBadge from "./BestSellerBadge";
 import { PanGestureHandler, State } from "react-native-gesture-handler";
+import { Asset } from "expo-asset";
 
 const ProductImages: React.FC = () => {
   const { images } = useContext(MainImageContext);
-  const [mainImage, setMainImage] = useState<string>(images.main);
+  const [mainImage, setMainImage] = useState<string>();
   const subImages = [images.main, images.sub1, images.sub2];
 
   const handleSubImagePress = (image: string) => {
@@ -51,7 +52,10 @@ const ProductImages: React.FC = () => {
         {/* PanGestureHandler for swipe */}
         <PanGestureHandler onHandlerStateChange={handleSwipe}>
           <View>
-            <ImagePrimary style={styles.image} source={{ uri: mainImage }} />
+            <ImagePrimary
+              style={styles.image}
+              source={mainImage}
+            />
           </View>
         </PanGestureHandler>
       </View>
@@ -63,7 +67,7 @@ const ProductImages: React.FC = () => {
             onPress={() => handleSubImagePress(subImage)}
             style={mainImage === subImage ? styles.activeBorder : null}
           >
-            <ImagePrimary style={styles.subimg} source={{ uri: subImage }} />
+            <ImagePrimary style={styles.subimg} source={subImage} />
           </TouchableOpacity>
         ))}
       </View>

@@ -1,6 +1,7 @@
+import { Asset } from "expo-asset";
 export interface Product {
   id: number
-  image: string
+  image: Asset
   offer: string
   name: string
   price: string
@@ -11,8 +12,7 @@ export interface Product {
 const productsList: Product[] = [
   {
     id: 1,
-    image:
-      "https://www.ikea.com/in/en/images/products/adde-chair-white__0728280_pe736170_s5.jpg?f=xl",
+    image:Asset.fromModule(require("../assets/images/chair1.png")),
     offer: "45% OFF",
     name: "EKERO",
     price: "$230.00",
@@ -21,8 +21,7 @@ const productsList: Product[] = [
   },
   {
     id: 2,
-    image:
-      "https://www.ikea.com/in/en/images/products/renberget-swivel-chair-bomstad-black__1020135_pe831794_s5.jpg?f=xl",
+    image:Asset.fromModule(require("../assets/images/chair2.png")),
     offer: "30% OFF",
     name: "LUND",
     price: "$180.00",
@@ -31,8 +30,7 @@ const productsList: Product[] = [
   },
   {
     id: 3,
-    image:
-      "https://www.ikea.com/in/en/images/products/poaeng-armchair-brown-knisa-light-beige__0571543_pe666957_s5.jpg?f=xl",
+    image:Asset.fromModule(require("../assets/images/chair3.png")),
     offer: "50% OFF",
     name: "HOLM",
     price: "$120.00",
@@ -41,8 +39,7 @@ const productsList: Product[] = [
   },
   {
     id: 4,
-    image:
-      "https://www.ikea.com/in/en/images/products/smaellen-swivel-chair-black__1096271_pe864278_s5.jpg?f=xl",
+    image:Asset.fromModule(require("../assets/images/chair4.png")),
     offer: "20% OFF",
     name: "SÖDER",
     price: "$250.00",
@@ -51,8 +48,7 @@ const productsList: Product[] = [
   },
   {
     id: 5,
-    image:
-      "https://www.ikea.com/in/en/images/products/flintan-office-chair-with-armrests-black__1007241_pe825960_s5.jpg?f=xl",
+    image:Asset.fromModule(require("../assets/images/chair5.png")),
     offer: "10% OFF",
     name: "KARL",
     price: "$200.00",

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ScrollView, StyleSheet, View } from "react-native";
 import ProductImages from "@/components/screens/ProductImages";
 import { MainImageContext } from "@/context/MainImageContex";
@@ -8,14 +8,14 @@ import SizeChart from "@/components/screens/SizeChart";
 import FrequentlyBought from "@/components/screens/FrequentlyBought";
 import AddToCart from "@/components/screens/AddToCart";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
-  const imagesArr = {
-    main: "https://www.ikea.com/in/en/images/products/ekeroe-armchair-skiftebo-yellow__0204753_pe359787_s5.jpg?f=xl",
-    sub1: "https://www.ikea.com/in/en/images/products/ekeroe-armchair-skiftebo-yellow__1116442_pe872500_s5.jpg?f=xl",
-    sub2: "https://www.ikea.com/in/en/images/products/ekeroe-armchair-skiftebo-yellow__0836444_pe596409_s5.jpg?f=xl"
-  };
+import { Asset } from "expo-asset";
 
 const Home:React.FC =()=> {
-  const [images, setImages] = useState(imagesArr);
+  const [images, setImages] = useState({
+    main: Asset.fromModule(require("../assets/images/chair_yellow_main.png")),
+    sub1: Asset.fromModule(require("../assets/images/chair_yellow_sub1.png")),
+    sub2: Asset.fromModule(require("../assets/images/chair_yellow_sub2.png")),
+  });
 
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>

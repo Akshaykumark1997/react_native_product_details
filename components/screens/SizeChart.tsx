@@ -5,6 +5,8 @@ import { COLORS } from "@/constants/Colors";
 import { scaleSize } from "@/styles/diamensions";
 import SPACING from "@/styles/spacing";
 import TYPOGRAPHY from "@/styles/fontSizes";
+import { Asset } from "expo-asset";
+import ImagePrimary from "../display/image/ImagePrimary";
 
 
 interface SizeItem {
@@ -57,11 +59,11 @@ const SizeChart: React.FC = () => {
               {index < sizes.length - 1 && <View style={styles.borderBottom} />}
             </View>
           ))}
-          <Image
+          <ImagePrimary
             style={styles.imgContainer}
-            source={{
-              uri: "https://www.ikea.com/in/en/images/products/ekeroe-armchair-skiftebo-dark-blue__0629853_pe694518_s5.jpg?f=xl",
-            }}
+            source={Asset.fromModule(
+              require("../../assets/images/chair_diamensions.png")
+            )}
           />
         </>
       )}

@@ -1,9 +1,10 @@
 import React from "react";
-import { Image, View, StyleSheet, ViewStyle, ImageStyle, ImageSourcePropType, } from "react-native";
+import { Image } from "expo-image";
+import {  View, StyleSheet, ViewStyle, ImageStyle, ImageSourcePropType, } from "react-native";
 
 interface ImageProps {
   style?: ViewStyle | ImageStyle;
-  source: ImageSourcePropType;
+  source: any;
   [key: string]: any;
 }
 
