@@ -1,6 +1,6 @@
 import { scaleSize } from "./diamensions";
 
-export default {
+const spacingStyles = {
   SCALE_1: scaleSize(1),
   SCALE_2: scaleSize(2),
   SCALE_4: scaleSize(4),
@@ -36,4 +36,6 @@ export default {
   SCALE_140: scaleSize(140),
   SCALE_150: scaleSize(150),
   SCALE_200: scaleSize(200),
-};
+}
+
+export default spacingStyles

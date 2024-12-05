@@ -1,6 +1,7 @@
 import React from "react";
-import { View, Text, Button, StyleSheet } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import { useRouter } from "expo-router";
+import PrimaryButton from "@/components/input/button/ButtonPrimary";
 
 export default function Home() {
   const router = useRouter();
@@ -8,9 +9,9 @@ export default function Home() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Welcome to the Home Page</Text>
-      <Button
-        title="Go to Product Page"
-        onPress={() => router.push("/products")}
+      <PrimaryButton
+        title="Add to cart"
+        onPress={() => console.log("clickedd")}
       />
     </View>
   );
@@ -25,6 +26,6 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     fontWeight: "bold",
-    marginBottom:10
-  },
+    marginBottom: 10,
+  }
 });
